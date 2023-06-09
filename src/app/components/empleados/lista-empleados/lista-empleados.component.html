@@ -1,0 +1,19 @@
+<div class="card my-4">
+    <div class="card-header">
+        Lista
+    </div>
+    <div class="card-body">
+        <ul>
+            <li *ngFor="let empleado of empleados; let i = index">
+                {{i+1}}.- {{empleado.nombre}} {{empleado.apellido}}, <span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{empleado.cargo}}</span>, {{empleado.salario}} <br>
+                <app-agregar-caracteristica (eventoAgregarCaracteristica)="agregarCaracteristica($event)" [empleadoId]="empleado.id"></app-agregar-caracteristica>
+                <ul>
+                    <li *ngFor="let caracteristica of empleado.caractetisticas">
+                        {{ caracteristica }}
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+</div>
