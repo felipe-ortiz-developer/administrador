@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
+import { AgregarCaracteristicaComponent } from './components/empleado/agregar-caracteristica/agregar-caracteristica.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadosComponent,
-    ListaEmpleadosComponent
+    ListaEmpleadosComponent,
+    AgregarCaracteristicaComponent
   ],
   imports: [
     BrowserModule,

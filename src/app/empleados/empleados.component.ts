@@ -13,12 +13,12 @@ export class EmpleadosComponent {
   txtSalario: string= "";
 
   empleados: Empleado[] = [
-      new Empleado('Felipe', 'Ortiz', 'Developer', '1200000'),
-			new Empleado('Juan', 'Dias', 'Manager', '1400000')
+      new Empleado(0, 'Felipe', 'Ortiz', 'Developer', '1200000', ['Responsable', 'Esforzado']),
+			new Empleado(1, 'Juan', 'Dias', 'Manager', '1400000', ['Inspirador', 'Educado'])
   ];
 
   agregarEmpleado(){
-    let empleado = new Empleado(this.txtNombre, this.txtApellido, this.txtCargo, this.txtSalario);
+    let empleado = new Empleado(this.empleados.length , this.txtNombre, this.txtApellido, this.txtCargo, this.txtSalario, []);
     this.empleados.push(empleado);
     this.txtNombre = "";
     this.txtApellido = "";

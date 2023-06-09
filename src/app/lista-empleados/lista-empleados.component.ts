@@ -8,4 +8,9 @@ import { Empleado } from '../models/empleado';
 })
 export class ListaEmpleadosComponent {
   @Input() empleados: Empleado[] = [];
+
+  agregarCaracteristica(caracteristica: { id:number, nombre:string }){
+    // alert(caracteristica.id + " " +caracteristica.caracteristica);
+    this.empleados[caracteristica.id].caractetisticas.push(caracteristica.nombre);
+  }
 }
