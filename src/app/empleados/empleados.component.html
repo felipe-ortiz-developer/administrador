@@ -27,18 +27,7 @@
         </form>
     </div>
 
-    <div class="card my-4">
-        <div class="card-header">
-            Lista
-        </div>
-        <div class="card-body">
-            <ul>
-                <li *ngFor="let empleado of empleados; let i = index">
-                    {{i+1}}.- {{empleado.nombre}} {{empleado.apellido}}, <span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{empleado.cargo}}</span>, {{empleado.salario}}
-                </li>
-            </ul>
-        </div>
-    </div>
+    <app-lista-empleados [empleados]="empleados"></app-lista-empleados>
 
     
 </div>
