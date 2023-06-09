@@ -25,6 +25,5 @@ export class EmpleadosComponent {
     this.txtApellido = "";
     this.txtCargo = "";
     this.txtSalario = "";
-    // console.log(empleado);
   }
 }
