@@ -7,10 +7,10 @@ import { Empleado } from '../models/empleado';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-  nombre: string= "";
-  apellido: string= "";
-  cargo: string= "";
-  salario: string= "";
+  txtNombre: string= "";
+  txtApellido: string= "";
+  txtCargo: string= "";
+  txtSalario: string= "";
 
   empleados: Empleado[] = [
       new Empleado('Felipe', 'Ortiz', 'Developer', '1200000'),
@@ -18,12 +18,12 @@ export class EmpleadosComponent {
   ];
 
   agregarEmpleado(){
-    let empleado = new Empleado(this.nombre, this.apellido, this.cargo, this.salario);
+    let empleado = new Empleado(this.txtNombre, this.txtApellido, this.txtCargo, this.txtSalario);
     this.empleados.push(empleado);
-    this.nombre = "";
-    this.apellido = "";
-    this.cargo = "";
-    this.salario = "";
+    this.txtNombre = "";
+    this.txtApellido = "";
+    this.txtCargo = "";
+    this.txtSalario = "";
     // console.log(empleado);
   }
 }

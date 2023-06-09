@@ -1,40 +1,44 @@
 <div class="container">
-    <div class="card">
+    <div class="mt-3">
+        <form action="">
+            <div class="mb-3">
+                <label class="form-label" for="nombre">Nombre</label>
+                <input [(ngModel)]="txtNombre" class="form-control" type="text" name="nombre" id="nombre">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="apellido">Apellido</label>
+                <input [(ngModel)]="txtApellido" class="form-control" type="text" name="apellido" id="apellido">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="cargo">Cargo</label>
+                <input [(ngModel)]="txtCargo" class="form-control" type="text" name="cargo" id="cargo">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="salario">Salario</label>
+                <input [(ngModel)]="txtSalario" class="form-control" type="text" name="salario" id="salario">
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <input type="submit" value="Agregar" class="btn btn-success" (click)="agregarEmpleado()">
+            </div>
+        </form>
+    </div>
+
+    <div class="card my-4">
         <div class="card-header">
             Lista
         </div>
         <div class="card-body">
             <ul>
                 <li *ngFor="let empleado of empleados; let i = index">
-                    {{i+1}}.- {{empleado.nombre}} {{empleado.apellido}}, {{empleado.cargo}}, {{empleado.salario}}
+                    {{i+1}}.- {{empleado.nombre}} {{empleado.apellido}}, <span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{empleado.cargo}}</span>, {{empleado.salario}}
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="mt-3">
-        <form action="">
-            <div class="mb-3">
-                <label class="form-label" for="nombre">Nombre</label>
-                <input [(ngModel)]="nombre" class="form-control" type="text" name="nombre" id="nombre">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label" for="apellido">Apellido</label>
-                <input [(ngModel)]="apellido" class="form-control" type="text" name="apellido" id="apellido">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label" for="cargo">Cargo</label>
-                <input [(ngModel)]="cargo" class="form-control" type="text" name="cargo" id="cargo">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label" for="salario">Salario</label>
-                <input [(ngModel)]="salario" class="form-control" type="text" name="salario" id="salario">
-            </div>
-
-            <input type="submit" value="Agregar" class="btn btn-success" (click)="agregarEmpleado()">
-        </form>
-    </div>
+    
 </div>

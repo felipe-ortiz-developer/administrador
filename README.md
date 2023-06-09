@@ -3,6 +3,6 @@
 
 - Proyecto de prueba de conceptos de angular 16
 - Clases Modelos
-- Formulario con [(ngModel)] y event binding
+- Formulario con [(ngModel)], [ngClass], [ngStyle] y event binding
 - Lista con *ngFor
 - Bootstrap 5
