@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Empleado } from 'src/app/models/empleado';
+import { Empleado } from '../../../models/empleado';
 
 @Component({
   selector: 'app-agregar-empleado',

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, Input} from '@angular/core';
+import { Caracteristica } from '../../../models/caracteristica';
 
 @Component({
   selector: 'app-agregar-caracteristica',
@@ -6,14 +7,11 @@ import { Component, EventEmitter, Output, Input} from '@angular/core';
   styleUrls: ['./agregar-caracteristica.component.css']
 })
 export class AgregarCaracteristicaComponent {
-  @Output() eventoAgregarCaracteristica = new EventEmitter<{ id:number, nombre:string }>();
+  @Output() eventoAgregarCaracteristica = new EventEmitter<Caracteristica>();
   @Input() empleadoId: number = 0;
 
-  agregarCaracteristica(value: string){
-    const valores = {
-      id: this.empleadoId,
-      nombre: value
-    }
-    this.eventoAgregarCaracteristica.emit(valores);
+  agregarCaracteristica(nombre: string){
+    const caracteristica = new Caracteristica(this.empleadoId, nombre);
+    this.eventoAgregarCaracteristica.emit(caracteristica);
   }
 }
