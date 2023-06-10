@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Formulario de creación</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Formulario de {{ empleadoEdit == undefined ? 'creación': 'edición'}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -11,20 +11,20 @@
                     <form action="">
                         <div class="mb-3">
                             <label class="form-label" for="nombre">Nombre</label>
-                            <input [(ngModel)]="txtNombre" class="form-control" type="text" name="nombre" id="nombre">
+                            <input (ngModelChange)="editarNombre($event)" [(ngModel)]="empleadoEdit ? empleadoEdit.nombre : txtNombre" class="form-control" type="text" name="nombre" id="nombre">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="apellido">Apellido</label>
-                            <input [(ngModel)]="txtApellido" class="form-control" type="text" name="apellido"
+                            <input (ngModelChange)="editarApellido($event)" [(ngModel)]="empleadoEdit ? empleadoEdit.apellido : txtApellido" class="form-control" type="text" name="apellido"
                                 id="apellido">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="cargo">Cargo</label>
-                            <input [(ngModel)]="txtCargo" class="form-control" type="text" name="cargo" id="cargo">
+                            <input (ngModelChange)="editarCargo($event)" [(ngModel)]="empleadoEdit ? empleadoEdit.cargo : txtCargo" class="form-control" type="text" name="cargo" id="cargo">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="salario">Salario</label>
-                            <input [(ngModel)]="txtSalario" class="form-control" type="text" name="salario"
+                            <input (ngModelChange)="editarSalario($event)" [(ngModel)]="empleadoEdit ? empleadoEdit.salario : txtSalario" class="form-control" type="text" name="salario"
                                 id="salario">
                         </div>
                     </form>
@@ -32,8 +32,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <input type="submit" value="Crear" class="btn btn-success" (click)="agregarEmpleado()">
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                <input type="submit" 
+                    [value]="empleadoEdit ? 'Modificar' : 'Crear'" 
+                    class="btn" 
+                    [ngClass]="empleadoEdit? 'btn-warning': 'btn-primary'"
+                    (click)="empleadoEdit ? modificarEmpleado() : crearEmpleado()">
             </div>
         </div>
     </div>

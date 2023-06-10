@@ -9,9 +9,11 @@ import { Caracteristica } from '../../../models/caracteristica';
 export class AgregarCaracteristicaComponent {
   @Output() eventoAgregarCaracteristica = new EventEmitter<Caracteristica>();
   @Input() empleadoId: number = 0;
+  caracteristica: string = "";
 
-  agregarCaracteristica(nombre: string){
-    const caracteristica = new Caracteristica(this.empleadoId, nombre);
-    this.eventoAgregarCaracteristica.emit(caracteristica);
+  agregarCaracteristica(){
+    const nuevaCaracteristica = new Caracteristica(this.empleadoId, this.caracteristica);
+    this.eventoAgregarCaracteristica.emit(nuevaCaracteristica);
+    this.caracteristica = "";
   }
 }
