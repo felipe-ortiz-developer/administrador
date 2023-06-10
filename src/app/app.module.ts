@@ -10,6 +10,9 @@ import { AgregarEmpleadoComponent } from './components/empleados/agregar-emplead
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicioEmpleadosService } from './services/servicio-empleados.service';
+import { CargosComponent } from './components/cargos/cargos.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import { ServicioEmpleadosService } from './services/servicio-empleados.service'
     EmpleadosComponent,
     ListaEmpleadosComponent,
     AgregarCaracteristicaComponent,
-    AgregarEmpleadoComponent
+    AgregarEmpleadoComponent,
+    CargosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [ServicioEmpleadosService],
   bootstrap: [AppComponent]
