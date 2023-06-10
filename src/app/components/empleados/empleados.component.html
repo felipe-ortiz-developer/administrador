@@ -1,24 +1,20 @@
 <div class="container">
     <!-- Button trigger modal -->
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button (click)="crearEmpleado()" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
             +
-        </button>      
+        </button>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Formulario de creación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <app-agregar-empleado [nEmpleados]="empleados.length"
-                        (eventoAgregarEmpleado)="agregarEmpleado($event)"></app-agregar-empleado>
-            </div>
-        </div>
-    </div>
+    <app-agregar-empleado
+        [empleadoEdit]="empleadoEdit"
+        (eventoEditarEmpleado)="modificarEmpleado($event)"
+        [nEmpleados]="empleados.length"
+        (eventoAgregarEmpleado)="agregarEmpleado($event)">
+    </app-agregar-empleado>
 
-    <app-lista-empleados [empleados]="empleados"></app-lista-empleados>
+    <app-lista-empleados 
+        (eventoEditarEmpleado)="editarEmpleado($event)"
+        [empleados]="empleados">
+    </app-lista-empleados>
 </div>
