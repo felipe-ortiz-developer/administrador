@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleado } from 'src/app/models/empleado';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -8,9 +9,10 @@ import { Empleado } from 'src/app/models/empleado';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
+  faPlus = faPlus;
   empleados: Empleado[] = [
-    new Empleado(0, 'Felipe', 'Ortiz', 'Developer', '1.000.000', ['Responsable', 'Esforzado']),
-		new Empleado(1, 'Marisol', 'Martinez', 'Masoterapeuta', '2.000.000', ['Inspiradora', 'Educada'])
+    new Empleado(0, 'Felipe', 'Ortiz', 'Developer', '1000000', ['Responsable', 'Esforzado']),
+		new Empleado(1, 'Marisol', 'Martinez', 'Masoterapeuta', '2000000', ['Inspiradora', 'Educada'])
   ];
 
   empleadoEdit: any;
@@ -28,12 +30,6 @@ export class EmpleadosComponent {
   }
 
   modificarEmpleado(empleado: Empleado){
-    console.log("Empleados edit: ");
-    console.log(empleado);
-
-    console.log("Empleados[id]: ");
-    console.log(this.empleados[empleado.id]);
-    
     this.empleados[empleado.id] = empleado;
   }
 }

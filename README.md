@@ -20,4 +20,7 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
         - @Input
         - @Output
     - Objetos anonimos
-- Integración de Bootstrap 5
+- Integración:
+    - Bootstrap 5
+    - Angular-font-awesome
+    - ng-bootstrap
