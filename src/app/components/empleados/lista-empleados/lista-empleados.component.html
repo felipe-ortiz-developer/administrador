@@ -12,6 +12,7 @@
                     <th scope="col">Cargo</th>
                     <th scope="col">Salario</th>
                     <th scope="col">Caracteristicas</th>
+                    <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,12 +23,27 @@
                     <td><span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{ empleado.cargo }}</span></td>
                     <td>{{ empleado.salario }}</td>
                     <td>
-                        <app-agregar-caracteristica (eventoAgregarCaracteristica)="agregarCaracteristica($event)" [empleadoId]="empleado.id"></app-agregar-caracteristica>
-                        <ul>
-                            <li *ngFor="let caracteristica of empleado.caractetisticas">
-                                {{ caracteristica }}
-                            </li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-auto">
+                                <ul>
+                                    <li *ngFor="let caracteristica of empleado.caractetisticas">
+                                        {{ caracteristica }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div class="col">
+                                <app-agregar-caracteristica (eventoAgregarCaracteristica)="agregarCaracteristica($event)" [empleadoId]="empleado.id"></app-agregar-caracteristica>
+                            </div>
+                            <div class="col-auto">
+                                <button (click)="editarEmpleado(empleado.id)" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Editar
+                                </button>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>

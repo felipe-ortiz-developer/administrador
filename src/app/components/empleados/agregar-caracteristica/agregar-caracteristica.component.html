@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="col">
+    <div class="col-auto">
         <label for="" class="mx-2">Agrega una caracteristica</label>
-        <input class="mx-2" type="text" #caracteristica>
-        <button class="btn btn-primary" (click)="agregarCaracteristica(caracteristica.value)">Agregar</button>
+        <input class="mx-2" type="text" [(ngModel)]="caracteristica">
+        <button [disabled]="!caracteristica" class="btn btn-primary mx-2 mt-1" (click)="agregarCaracteristica()">Agregar</button>
     </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Empleado } from '../../../models/empleado';
+import { Caracteristica } from '../../../models/caracteristica';
 
 @Component({
   selector: 'app-lista-empleados',
@@ -8,9 +9,15 @@ import { Empleado } from '../../../models/empleado';
 })
 export class ListaEmpleadosComponent {
   @Input() empleados: Empleado[] = [];
+  @Output() eventoEditarEmpleado = new EventEmitter<Empleado>();
 
-  agregarCaracteristica(caracteristica: { id:number, nombre:string }){
-    // alert(caracteristica.id + " " +caracteristica.caracteristica);
+  agregarCaracteristica(caracteristica: Caracteristica){
     this.empleados[caracteristica.id].caractetisticas.push(caracteristica.nombre);
+  }
+
+  editarEmpleado(empleadoId: number) {
+    const empleado = this.empleados.find(empleado => empleado.id == empleadoId);
+    this.eventoEditarEmpleado.emit(empleado);
+    // console.log(empleado);
   }
 }
