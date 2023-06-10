@@ -7,6 +7,8 @@ import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { ListaEmpleadosComponent } from './components/empleados/lista-empleados/lista-empleados.component';
 import { AgregarCaracteristicaComponent } from './components/empleados/agregar-caracteristica/agregar-caracteristica.component';
 import { AgregarEmpleadoComponent } from './components/empleados/agregar-empleado/agregar-empleado.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AgregarEmpleadoComponent } from './components/empleados/agregar-emplead
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
