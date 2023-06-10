@@ -22,6 +22,7 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
         - OnInit
     - Services
     - Objetos anonimos
+- Routes (sistema SPA)
 - Integración:
     - Bootstrap 5
     - Angular-font-awesome
