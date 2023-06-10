@@ -20,8 +20,9 @@
                     <th scope="row">{{i+1}}</th>
                     <td>{{ empleado.nombre }}</td>
                     <td>{{ empleado.apellido }}</td>
-                    <td><span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{ empleado.cargo }}</span></td>
-                    <td>{{ empleado.salario }}</td>
+                    <td><span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{ empleado.cargo }}</span>
+                    </td>
+                    <td>${{ formatear(empleado.salario) }}</td>
                     <td>
                         <div class="row">
                             <div class="col-auto">
@@ -35,12 +36,15 @@
                     </td>
                     <td>
                         <div class="row">
-                            <div class="col">
-                                <app-agregar-caracteristica (eventoAgregarCaracteristica)="agregarCaracteristica($event)" [empleadoId]="empleado.id"></app-agregar-caracteristica>
-                            </div>
                             <div class="col-auto">
-                                <button (click)="editarEmpleado(empleado.id)" type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Editar
+                                <app-agregar-caracteristica
+                                    (eventoAgregarCaracteristica)="agregarCaracteristica($event)"
+                                    [empleadoId]="empleado.id"></app-agregar-caracteristica>
+                            </div>
+                            <div class="col ">
+                                <button placement="top" ngbTooltip="Editar" style="border-radius: 50%;" (click)="editarEmpleado(empleado.id)" type="button"
+                                    class="btn btn-warning d-block mx-auto mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <fa-icon style="color: white" [icon]="faPen"></fa-icon>
                                 </button>
                             </div>
                         </div>
