@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Empleado } from 'src/app/models/empleado';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { ServicioEmpleadosService } from 'src/app/services/servicio-empleados.service';
 
 
 @Component({
@@ -8,17 +9,19 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
-export class EmpleadosComponent {
+export class EmpleadosComponent implements OnInit{
   faPlus = faPlus;
-  empleados: Empleado[] = [
-    new Empleado(0, 'Felipe', 'Ortiz', 'Developer', '1000000', ['Responsable', 'Esforzado']),
-		new Empleado(1, 'Marisol', 'Martinez', 'Masoterapeuta', '2000000', ['Inspiradora', 'Educada'])
-  ];
-
+  empleados: Empleado[] = [];
   empleadoEdit: any;
 
+  constructor(private empleadoService: ServicioEmpleadosService){}
+
+  ngOnInit(): void {
+    this.empleados = this.empleadoService.empleados;
+  }
+
   agregarEmpleado(empleado: Empleado){
-    this.empleados.push(empleado);
+    this.empleadoService.agregarEmpleado(empleado);
   }
 
   editarEmpleado(empleado: Empleado){

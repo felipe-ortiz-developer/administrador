@@ -12,13 +12,15 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
 - Directivas 
     - Formulario con [(ngModel)], [ngClass], [ngStyle] y event binding
     - Lista con *ngFor
-- Estructura de proyecto componentes y modelos
+- Estructura de proyecto componentes, modelos y servicios
     - Clases Modelo
         - Empleado
         - Caracteristicas
-    - Comunicacion entre componentes padres e hijos
+    - Comunicacion entre componentes
         - @Input
         - @Output
+        - OnInit
+    - Services
     - Objetos anonimos
 - Integración:
     - Bootstrap 5

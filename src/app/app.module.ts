@@ -9,6 +9,7 @@ import { AgregarCaracteristicaComponent } from './components/empleados/agregar-c
 import { AgregarEmpleadoComponent } from './components/empleados/agregar-empleado/agregar-empleado.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServicioEmpleadosService } from './services/servicio-empleados.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     NgbModule
   ],
-  providers: [],
+  providers: [ServicioEmpleadosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
