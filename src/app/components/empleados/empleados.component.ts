@@ -9,11 +9,12 @@ import { Empleado } from 'src/app/models/empleado';
 })
 export class EmpleadosComponent {
   empleados: Empleado[] = [
-      new Empleado(0, 'Felipe', 'Ortiz', 'Developer', '1200000', ['Responsable', 'Esforzado']),
-			new Empleado(1, 'Juan', 'Dias', 'Manager', '1400000', ['Inspirador', 'Educado'])
+      new Empleado(0, 'Felipe', 'Ortiz', 'Developer', '1.000.000', ['Responsable', 'Esforzado']),
+			new Empleado(1, 'Marisol', 'Martinez', 'Masoterapeuta', '2.000.000', ['Inspiradora', 'Educada'])
   ];
 
   agregarEmpleado(empleado: Empleado){
     this.empleados.push(empleado);
+    
   }
 }
