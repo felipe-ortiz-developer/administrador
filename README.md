@@ -1,11 +1,13 @@
 # Administrador
 Proyecto de prueba para poner en practica conceptos de angular 16.
+
 ![Alt text](image.png)
 
 #### Funcionalidades
 - Listar Empleados
 - Agregar Empleado
 - Editar Empleado
+- Eliminar Empleado
 - Agregar Caracteristica al Empleado
 #### Conceptos puestos en practica: 
 - Interpolación
@@ -27,3 +29,4 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
     - Bootstrap 5
     - Angular-font-awesome
     - ng-bootstrap
+    - sweetalert2

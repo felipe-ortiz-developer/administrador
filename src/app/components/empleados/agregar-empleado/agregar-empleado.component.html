@@ -33,7 +33,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <input type="submit" 
-                    [value]="empleadoEdit ? 'Modificar' : 'Crear'" 
+                    [value]="empleadoEdit ? 'Editar' : 'Crear'" 
                     class="btn" 
                     [ngClass]="empleadoEdit? 'btn-warning': 'btn-primary'"
                     (click)="empleadoEdit ? modificarEmpleado() : crearEmpleado()">

@@ -41,10 +41,14 @@
                                     (eventoAgregarCaracteristica)="agregarCaracteristica($event)"
                                     [empleadoId]="empleado.id"></app-agregar-caracteristica>
                             </div>
-                            <div class="col ">
-                                <button placement="top" ngbTooltip="Editar" style="border-radius: 50%;" (click)="editarEmpleado(empleado.id)" type="button"
-                                    class="btn btn-warning d-block mx-auto mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="col d-flex">
+                                <button placement="top" ngbTooltip="Editar" (click)="editarEmpleado(empleado.id)" type="button"
+                                    class="botonTabla btn btn-warning d-block mx-auto mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <fa-icon style="color: white" [icon]="faPen"></fa-icon>
+                                </button>
+                                <button placement="top" ngbTooltip="Eliminar" (click)="eliminarEmpleado(empleado.id)" type="button"
+                                    class="botonTabla btn btn-danger d-block mx-auto mt-2">
+                                    <fa-icon style="color: white" [icon]="faTrash"></fa-icon>
                                 </button>
                             </div>
                         </div>
