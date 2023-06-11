@@ -3,3 +3,9 @@
     color: rgb(0, 163, 192);
     font-weight: bold;
 }
+
+.botonTabla {
+    border-radius: 50% !important; 
+    width: 42px; 
+    height: 42px;
+}
