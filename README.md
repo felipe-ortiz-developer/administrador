@@ -1,4 +1,4 @@
-# # ![Alt text](src/assets/hombre-de-negocios.png) Administrador
+# # ![Alt text](src/assets/hombre-de-negocios.png | width=50 | height=50) Administrador
 Proyecto de prueba para poner en practica conceptos de angular 16.
 
 ![Alt text](image.png)
