@@ -5,6 +5,7 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
 
 #### Funcionalidades
 - Listar Empleados
+- Filtrar Empleados
 - Agregar Empleado
 - Editar Empleado
 - Eliminar Empleado
