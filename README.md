@@ -1,4 +1,4 @@
-# # ![Alt text](src/assets/hombre-de-negocios.png | width=50) Administrador
+## <img src="src/assets/hombre-de-negocios.png" width="30" alt="Texto alternativo"> Administrador
 Proyecto de prueba para poner en practica conceptos de angular 16.
 
 ![Alt text](image.png)
