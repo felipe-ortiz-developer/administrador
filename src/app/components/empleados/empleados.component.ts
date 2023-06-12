@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from 'src/app/models/empleado';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { ServicioEmpleadosService } from 'src/app/services/servicio-empleados.service';
 
 
@@ -11,13 +11,36 @@ import { ServicioEmpleadosService } from 'src/app/services/servicio-empleados.se
 })
 export class EmpleadosComponent implements OnInit{
   faPlus = faPlus;
+  faFilter = faFilter;
   empleados: Empleado[] = [];
   empleadoEdit: any;
+
+  txtNombre: string = '';
+  txtApellido: string = '';
+  txtCargo: string = '';
+  txtSalario: string = '';
 
   constructor(private empleadoService: ServicioEmpleadosService){}
 
   ngOnInit(): void {
     this.empleados = this.empleadoService.empleados;
+  }
+
+  buscarEmpleados(){
+    this.empleados = this.empleadoService.empleados;
+    if(this.txtNombre !== ''){
+      this.empleados = this.empleados.filter(empleado => empleado.nombre == this.txtNombre);
+    }
+    if(this.txtApellido !== ''){
+      this.empleados = this.empleados.filter(empleado => empleado.apellido == this.txtApellido);
+    }
+    if(this.txtCargo !== ''){
+      this.empleados = this.empleados.filter(empleado => empleado.cargo == this.txtCargo);
+    }
+    if(this.txtSalario !== ''){
+      this.empleados = this.empleados.filter(empleado => empleado.salario == this.txtSalario);
+    }
+    this.empleados = this.empleados.filter(element => element !== undefined);
   }
 
   agregarEmpleado(empleado: Empleado){

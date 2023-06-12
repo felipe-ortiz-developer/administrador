@@ -9,6 +9,12 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
 - Editar Empleado
 - Eliminar Empleado
 - Agregar Caracteristica al Empleado
+
+#### Entidades
+- Empleado
+- Caracteristicas
+- Cargo
+
 #### Conceptos puestos en practica: 
 - Interpolación
 - Directivas 
@@ -23,8 +29,9 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
         - @Output
         - OnInit
     - Services
-    - Objetos anonimos
+    - Objetos Interface
 - Routes (sistema SPA)
+    - QueryParams
 - Integración:
     - Bootstrap 5
     - Angular-font-awesome
