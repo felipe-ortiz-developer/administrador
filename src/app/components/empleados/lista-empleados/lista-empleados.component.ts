@@ -3,6 +3,7 @@ import { Empleado } from '../../../models/empleado';
 import { Caracteristica } from '../../../models/caracteristica';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import { ServicioEmpleadosService } from 'src/app/services/servicio-empleados.service';
 
 @Component({
   selector: 'app-lista-empleados',
@@ -14,6 +15,8 @@ export class ListaEmpleadosComponent {
   faTrash = faTrash;
   @Input() empleados: Empleado[] = [];
   @Output() eventoEditarEmpleado = new EventEmitter<Empleado>();
+
+  constructor(private empleadoService: ServicioEmpleadosService){ }
 
   agregarCaracteristica(caracteristica: Caracteristica){
     this.empleados[caracteristica.id].caractetisticas.push(caracteristica.nombre);
@@ -43,6 +46,7 @@ export class ListaEmpleadosComponent {
           confirmButtonColor: '#0d6efd',
         });
         this.empleados = this.empleados.filter(empleado => empleado.id !== empleadoId);
+        this.empleadoService.eliminarEmpleado(empleadoId);
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire({
           title: 'Cancelado',

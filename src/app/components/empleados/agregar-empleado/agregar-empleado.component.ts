@@ -45,6 +45,7 @@ export class AgregarEmpleadoComponent {
     this.txtApellido !== '' ? this.empleadoEdit.apellido = this.txtApellido : this.empleadoEdit.apellido;
     this.txtCargo !== '' ? this.empleadoEdit.cargo = this.txtCargo : this.empleadoEdit.cargo;
     this.txtSalario !== '' ? this.empleadoEdit.salario = this.txtSalario : this.empleadoEdit.salario;
-    // this.eventoEditarEmpleado.emit(this.empleadoEdit);
+    
+    this.eventoEditarEmpleado.emit(this.empleadoEdit);
   }
 }

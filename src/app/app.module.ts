@@ -13,6 +13,8 @@ import { ServicioEmpleadosService } from './services/servicio-empleados.service'
 import { CargosComponent } from './components/cargos/cargos.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,13 @@ import { AppRoutingModule } from './app-routing.module';
     FontAwesomeModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [ServicioEmpleadosService],
+  providers: [
+    ServicioEmpleadosService, 
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,6 @@ import { Empleado } from 'src/app/models/empleado';
 import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { ServicioEmpleadosService } from 'src/app/services/servicio-empleados.service';
 
-
 @Component({
   selector: 'app-empleados',
   templateUrl: './empleados.component.html',
@@ -23,7 +22,10 @@ export class EmpleadosComponent implements OnInit{
   constructor(private empleadoService: ServicioEmpleadosService){}
 
   ngOnInit(): void {
-    this.empleados = this.empleadoService.empleados;
+    this.empleadoService.obtenerEmpleados().subscribe( misEmpleados => {
+      this.empleados = Object.values(misEmpleados);
+      this.empleadoService.setEmpleados(this.empleados);
+    });
   }
 
   buscarEmpleados(){
@@ -57,5 +59,7 @@ export class EmpleadosComponent implements OnInit{
 
   modificarEmpleado(empleado: Empleado){
     this.empleados[empleado.id] = empleado;
+    this.empleadoService.setEmpleados(this.empleados);
+    this.empleadoService.actualizarEmpleado(empleado.id, empleado);
   }
 }
