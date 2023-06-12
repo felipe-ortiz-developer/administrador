@@ -1,7 +1,7 @@
-<div class="card mt-4" style="overflow: auto;">
-    <div class="card-header">
+<div class="card" style="overflow: auto;">
+    <!-- <div class="card-header">
         Lista
-    </div>
+    </div> -->
     <div class="card-body">
         <table class="table table-striped table-hover">
             <thead>
@@ -41,13 +41,13 @@
                                     (eventoAgregarCaracteristica)="agregarCaracteristica($event)"
                                     [empleadoId]="empleado.id"></app-agregar-caracteristica>
                             </div>
-                            <div class="col d-flex">
+                            <div class="col-auto d-flex justify-content-center">
                                 <button placement="top" ngbTooltip="Editar" (click)="editarEmpleado(empleado.id)" type="button"
-                                    class="botonTabla btn btn-warning d-block mx-auto mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    class="m-1 botonTabla btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <fa-icon style="color: white" [icon]="faPen"></fa-icon>
                                 </button>
                                 <button placement="top" ngbTooltip="Eliminar" (click)="eliminarEmpleado(empleado.id)" type="button"
-                                    class="botonTabla btn btn-danger d-block mx-auto mt-2">
+                                    class="m-1 botonTabla btn btn-danger mt-2">
                                     <fa-icon style="color: white" [icon]="faTrash"></fa-icon>
                                 </button>
                             </div>
