@@ -5,23 +5,48 @@
             Empleados
         </h1>
     </div>
-    <div class="d-flex justify-content-end">
-        <button (click)="crearEmpleado()" type="button" 
-            class="btn btn-primary btn-lg" 
-            data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <fa-icon [icon]="faPlus"></fa-icon>
-        </button>
+    <!-- <div class="d-flex justify-content-end">
+    </div> -->
+    <div class="card mt-2">
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input placeholder="Nombre" class="form-control" [(ngModel)]="txtNombre" type="text"
+                            name="nombre" id="nombre">
+                    </div>
+                    <div class="col">
+                        <input placeholder="Apellido" class="form-control" [(ngModel)]="txtApellido" type="text"
+                            name="apellido" id="apellido">
+                    </div>
+                    <div class="col">
+                        <input placeholder="Cargo" class="form-control" [(ngModel)]="txtCargo" type="text" name="cargo"
+                            id="cargo">
+                    </div>
+                    <div class="col">
+                        <input placeholder="Salario" class="form-control" [(ngModel)]="txtSalario" type="text"
+                            name="salario" id="salario">
+                    </div>
+                    <div class="col">
+                        <button placement="top" ngbTooltip="Filtrar" class="btn btn-primary" (click)="buscarEmpleados()"><fa-icon
+                                [icon]="faFilter"></fa-icon></button>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button (click)="crearEmpleado()" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" style="height: 40px;"
+                            placement="top" ngbTooltip="Nuevo empleado">
+                            <fa-icon [icon]="faPlus"></fa-icon>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <app-agregar-empleado
-        [empleadoEdit]="empleadoEdit"
-        (eventoEditarEmpleado)="modificarEmpleado($event)"
-        [nEmpleados]="empleados.length"
-        (eventoAgregarEmpleado)="agregarEmpleado($event)">
+    <app-agregar-empleado [empleadoEdit]="empleadoEdit" (eventoEditarEmpleado)="modificarEmpleado($event)"
+        [nEmpleados]="empleados.length" (eventoAgregarEmpleado)="agregarEmpleado($event)">
     </app-agregar-empleado>
 
-    <app-lista-empleados 
-        (eventoEditarEmpleado)="editarEmpleado($event)"
-        [empleados]="empleados">
+    <app-lista-empleados (eventoEditarEmpleado)="editarEmpleado($event)" [empleados]="empleados">
     </app-lista-empleados>
 </div>

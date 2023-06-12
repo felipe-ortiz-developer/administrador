@@ -1,9 +1,9 @@
-<div class="row g-3">
-    <div class="col-auto">
-        <input placeholder="Agrega caracteristica" class="form-control m-2" type="text" [(ngModel)]="caracteristica">
-    </div>
-    <div class="col-auto">
-        <button placement="top" ngbTooltip="Agregar" [disabled]="!caracteristica" class="btn btn-primary mt-2" (click)="agregarCaracteristica()">
+<div class="row">
+    <div class="col-auto d-flex justify-content-center">
+        <input style="width: 82% !important" placeholder="Agrega caracteristica" class="form-control m-2" type="text" [(ngModel)]="caracteristica">
+    <!-- </div>
+    <div class="col-auto"> -->
+        <button style="height: 40px;" placement="top" ngbTooltip="Agregar" [disabled]="!caracteristica" class="btn btn-primary mt-2" (click)="agregarCaracteristica()">
             <fa-icon [icon]="faPlus"></fa-icon>
         </button>
     </div>
