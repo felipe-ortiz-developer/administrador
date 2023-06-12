@@ -49,6 +49,9 @@
         [nEmpleados]="empleados.length" (eventoAgregarEmpleado)="agregarEmpleado($event)">
     </app-agregar-empleado>
 
-    <app-lista-empleados (eventoEditarEmpleado)="editarEmpleado($event)" [empleados]="empleados">
+    <app-lista-empleados 
+        (eventoEliminarEmpleado)="eliminarEmpleado($event)"
+        (eventoEditarEmpleado)="editarEmpleado($event)" 
+        [empleados]="empleados">
     </app-lista-empleados>
 </div>

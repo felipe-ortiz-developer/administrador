@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from 'src/app/models/empleado';
 import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
-import { ServicioEmpleadosService } from 'src/app/services/servicio-empleados.service';
+import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
   selector: 'app-empleados',
@@ -19,7 +19,7 @@ export class EmpleadosComponent implements OnInit{
   txtCargo: string = '';
   txtSalario: string = '';
 
-  constructor(private empleadoService: ServicioEmpleadosService){}
+  constructor(private empleadoService: EmpleadoService){}
 
   ngOnInit(): void {
     this.empleadoService.obtenerEmpleados().subscribe( misEmpleados => {
@@ -61,5 +61,11 @@ export class EmpleadosComponent implements OnInit{
     this.empleados[empleado.id] = empleado;
     this.empleadoService.setEmpleados(this.empleados);
     this.empleadoService.actualizarEmpleado(empleado.id, empleado);
+  }
+
+  eliminarEmpleado(id:number){
+    this.empleados = this.empleados.filter(empleado => empleado.id !== id);
+    this.empleadoService.setEmpleados(this.empleados);
+    this.empleadoService.eliminarEmpleado(id);
   }
 }
