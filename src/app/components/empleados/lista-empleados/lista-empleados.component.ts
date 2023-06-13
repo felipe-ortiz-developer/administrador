@@ -3,6 +3,7 @@ import { Empleado } from '../../../models/empleado';
 import { Caracteristica } from '../../../models/caracteristica';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
   selector: 'app-lista-empleados',
@@ -16,16 +17,16 @@ export class ListaEmpleadosComponent {
   @Output() eventoEditarEmpleado = new EventEmitter<Empleado>();
   @Output() eventoEliminarEmpleado = new EventEmitter<number>();
 
-  constructor(){ }
+  constructor(private empleadoService: EmpleadoService){ }
 
   agregarCaracteristica(caracteristica: Caracteristica){
-    this.empleados[caracteristica.id].caractetisticas.push(caracteristica.nombre);
+    this.empleados[caracteristica.id].caracteristicas.push(caracteristica.nombre);
+    this.empleadoService.actualizarEmpleado(this.empleados[caracteristica.id].id, this.empleados[caracteristica.id]);
   }
 
   editarEmpleado(empleadoId: number) {
     const empleado = this.empleados.find(empleado => empleado.id == empleadoId);
     this.eventoEditarEmpleado.emit(empleado);
-    // console.log(empleado);
   }
 
   eliminarEmpleado(empleadoId: number){
