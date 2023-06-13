@@ -21,7 +21,6 @@ export class EmpleadoService {
 
   obtenerEmpleados(){
     return this.httpClient.get('https://administrador-894c8-default-rtdb.firebaseio.com/empleados.json');
-    // return this.dataService.cargarEmpleados(); // Esto retorna un observable
   }
 
   agregarEmpleado(empleado: Empleado){
@@ -30,7 +29,6 @@ export class EmpleadoService {
       response => console.log("Se ha creado correctamente:", response),
       error => console.log(error)
     );
-    // this.dataService.guardarEmpleado(this.empleados);
   }
 
   actualizarEmpleado(id: number, empleado: Empleado){
@@ -39,16 +37,13 @@ export class EmpleadoService {
       response => console.log("Se ha modificado correctamente:", response),
       error => console.log(error)
     );
-    // this.dataService.actualizarEmpleado(id, empleado);
   }
 
   eliminarEmpleado(id: number){
     let url = "https://administrador-894c8-default-rtdb.firebaseio.com/empleados/"+id+".json";
-    // console.log("url: "+url);
     this.httpClient.delete(url).subscribe(
       response => console.log("Se ha eliminado correctamente:", response),
       error => console.log(error)
     );
-    // this.dataService.eliminarEmpleado(id);
   }
 }

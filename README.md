@@ -1,5 +1,5 @@
 ## <img src="src/assets/hombre-de-negocios.png" width="30" alt="Texto alternativo"> Administrador
-Proyecto de prueba para poner en practica conceptos de angular 16.
+Proyecto de prueba, conceptos de angular v16.
 
 ![Alt text](image.png)
 
@@ -34,7 +34,7 @@ Proyecto de prueba para poner en practica conceptos de angular 16.
 - Routes (sistema SPA)
     - QueryParams
 - Integración:
-    - Firebase
+    - Firebase Base de datos Realtime
     - Bootstrap 5
     - Angular-font-awesome
     - ng-bootstrap
