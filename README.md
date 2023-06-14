@@ -2,7 +2,7 @@
 Proyecto de prueba, conceptos de angular v16.
 
 - Usuario: fe.ortizo@alumnos.duoc.cl
-- Contrasela: porponeralgo
+- Contraseña: porponeralgo
 
 ![Alt text](image-1.png)
 ![Alt text](image.png)
