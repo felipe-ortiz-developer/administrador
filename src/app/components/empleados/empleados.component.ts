@@ -19,16 +19,21 @@ export class EmpleadosComponent implements OnInit{
   txtCargo: string = '';
   txtSalario: string = '';
 
+  maxId: number = 0;
+
   constructor(private empleadoService: EmpleadoService){}
 
   ngOnInit(): void {
     this.empleadoService.obtenerEmpleados().subscribe( misEmpleados => {
       if(misEmpleados){
         let arreglo = Array.isArray(misEmpleados) ? misEmpleados : [misEmpleados];
+        arreglo = arreglo.filter(obj => obj !== null);
+        console.log(arreglo);
+        
         arreglo.forEach(obj => {
           obj.caractetisticas = [];
         });
-        this.empleados = Object.values(misEmpleados);
+        this.empleados = Object.values(arreglo);
       }else{
         this.empleados = [];
       }
@@ -54,6 +59,13 @@ export class EmpleadosComponent implements OnInit{
   }
 
   agregarEmpleado(empleado: Empleado){
+    this.empleados.forEach(empleado => {
+      if(this.maxId <= empleado.id){
+        this.maxId = empleado.id;
+      }
+    });
+    this.maxId = this.maxId+1;
+    empleado.id = this.maxId;
     this.empleadoService.agregarEmpleado(empleado);
   }
 
@@ -68,7 +80,7 @@ export class EmpleadosComponent implements OnInit{
   modificarEmpleado(empleado: Empleado){
     this.empleados[empleado.id] = empleado;
     this.empleadoService.setEmpleados(this.empleados);
-    this.empleadoService.actualizarEmpleado(empleado.id, empleado);
+    this.empleadoService.actualizarEmpleado(empleado);
   }
 
   eliminarEmpleado(id:number){

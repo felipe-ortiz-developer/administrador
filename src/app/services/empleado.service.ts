@@ -31,8 +31,10 @@ export class EmpleadoService {
     );
   }
 
-  actualizarEmpleado(id: number, empleado: Empleado){
-    let url = "https://administrador-894c8-default-rtdb.firebaseio.com/empleados/"+id+".json";
+  actualizarEmpleado(empleado: Empleado){
+    console.log(empleado);
+    
+    let url = "https://administrador-894c8-default-rtdb.firebaseio.com/empleados/"+empleado.id+".json";
     this.httpClient.put(url, empleado).subscribe(
       response => console.log("Se ha modificado correctamente:", response),
       error => console.log(error)

@@ -46,7 +46,8 @@
     <app-agregar-empleado 
         [empleadoEdit]="empleadoEdit" 
         (eventoEditarEmpleado)="modificarEmpleado($event)"
-        [nEmpleados]="empleados.length" (eventoAgregarEmpleado)="agregarEmpleado($event)">
+        [nEmpleados]="maxId" 
+        (eventoAgregarEmpleado)="agregarEmpleado($event)">
     </app-agregar-empleado>
 
     <app-lista-empleados 
