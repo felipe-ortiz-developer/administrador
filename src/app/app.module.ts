@@ -14,6 +14,11 @@ import { CargosComponent } from './components/cargos/cargos.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { ErrorComponent } from './components/error/error.component';
+import { LoginService } from './services/login.service';
+import { CookieService } from 'ngx-cookie-service';
+import { LoginGuardian } from './components/login/login-guardian';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     ListaEmpleadosComponent,
     AgregarCaracteristicaComponent,
     AgregarEmpleadoComponent,
-    CargosComponent
+    CargosComponent,
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,10 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    EmpleadoService
+    EmpleadoService,
+    LoginService,
+    CookieService,
+    LoginGuardian
   ],
   bootstrap: [AppComponent]
 })
