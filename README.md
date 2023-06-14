@@ -1,9 +1,14 @@
 ## <img src="src/assets/hombre-de-negocios.png" width="30" alt="Texto alternativo"> Administrador
 Proyecto de prueba, conceptos de angular v16.
 
+Usuario: fe.ortizo@alumnos.duoc.cl
+Contrasela: porponeralgo
+
+![Alt text](image-1.png)
 ![Alt text](image.png)
 
 #### Funcionalidades
+- Sistema de login
 - Listar Empleados
 - Filtrar Empleados
 - Agregar Empleado
@@ -19,8 +24,12 @@ Proyecto de prueba, conceptos de angular v16.
 #### Conceptos puestos en practica: 
 - Interpolación
 - Directivas 
-    - Formulario con [(ngModel)], [ngClass], [ngStyle] y event binding
-    - Lista con *ngFor
+    - [(ngModel)]
+    - [ngClass]
+    - [ngStyle] 
+    - Event binding
+    - *ngFor
+    - *ngIf
 - Estructura de proyecto componentes, modelos y servicios
     - Clases Modelo
         - Empleado
@@ -33,9 +42,13 @@ Proyecto de prueba, conceptos de angular v16.
     - Objetos Interface
 - Routes (sistema SPA)
     - QueryParams
+    - Guardian
 - Integración:
-    - Firebase Base de datos Realtime
+    - Firebase 
+        - Base de datos Realtime
+        - Authentication
     - Bootstrap 5
     - Angular-font-awesome
     - ng-bootstrap
     - sweetalert2
+    - cookies
