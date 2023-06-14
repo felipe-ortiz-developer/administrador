@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Empleado } from 'src/app/models/empleado';
 import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-empleados',
@@ -21,14 +22,14 @@ export class EmpleadosComponent implements OnInit{
 
   maxId: number = 0;
 
-  constructor(private empleadoService: EmpleadoService){}
+  constructor(private empleadoService: EmpleadoService){ }
 
   ngOnInit(): void {
     this.empleadoService.obtenerEmpleados().subscribe( misEmpleados => {
       if(misEmpleados){
         let arreglo = Array.isArray(misEmpleados) ? misEmpleados : [misEmpleados];
         arreglo = arreglo.filter(obj => obj !== null);
-        console.log(arreglo);
+        // console.log(arreglo);
         
         arreglo.forEach(obj => {
           obj.caractetisticas = [];
@@ -78,9 +79,34 @@ export class EmpleadosComponent implements OnInit{
   }
 
   modificarEmpleado(empleado: Empleado){
-    this.empleados[empleado.id] = empleado;
-    this.empleadoService.setEmpleados(this.empleados);
-    this.empleadoService.actualizarEmpleado(empleado);
+    Swal.fire({
+      title: '¿Estas seguro?',
+      text: 'Se modificará de forma irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Confirmar',
+      confirmButtonColor: '#FFC107',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire({
+          title: 'Editar',
+          text: 'Empleado editado correctamente.',
+          icon: 'success',
+          confirmButtonColor: '#0d6efd',
+        });
+        this.empleados[empleado.id] = empleado;
+        this.empleadoService.setEmpleados(this.empleados);
+        this.empleadoService.actualizarEmpleado(empleado);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({
+          title: 'Cancelado',
+          text: 'Proceso cancelado.',
+          icon: 'error',
+          confirmButtonColor: '#0d6efd',
+        });
+      }
+    });
   }
 
   eliminarEmpleado(id:number){
