@@ -20,8 +20,18 @@ export class ListaEmpleadosComponent {
   constructor(private empleadoService: EmpleadoService){ }
 
   agregarCaracteristica(caracteristica: Caracteristica){
-    this.empleados[caracteristica.id].caracteristicas.push(caracteristica.nombre);
-    this.empleadoService.actualizarEmpleado(this.empleados[caracteristica.id].id, this.empleados[caracteristica.id]);
+    this.empleados.forEach(
+      empleado => {
+        if(empleado.id == caracteristica.id){
+          if(empleado.caracteristicas == null) {
+            empleado.caracteristicas = [];
+          }
+          empleado.caracteristicas.push(caracteristica.nombre);
+          this.empleadoService.actualizarEmpleado(empleado);
+        }
+      }
+    );
+    
   }
 
   editarEmpleado(empleadoId: number) {

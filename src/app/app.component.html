@@ -10,11 +10,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active">Empleados</a>
+          <a class="nav-link" *ngIf="estaLogeado() !== ''" routerLink="/" routerLinkActive="active">Empleados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cargos" routerLinkActive="active">Cargos</a>
+          <a class="nav-link" *ngIf="estaLogeado() !== ''" routerLink="/cargos" routerLinkActive="active">Cargos</a>
         </li>
+        
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -30,10 +31,18 @@
           <a class="nav-link disabled">Disabled</a>
         </li> -->
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex mx-3" role="search">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+        <button class="btn btn-outline-primary" type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
       </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="estaLogeado() == ''" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" role="button" *ngIf="estaLogeado() !== ''" (click)="logout()" routerLinkActive="active">Cerrar sesión</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

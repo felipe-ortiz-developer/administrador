@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="login(f)">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="usuario" ngModel placeholder="Usuario" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="password" name="contraseña" ngModel placeholder="Contraseña" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" value="Iniciar sessión" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
