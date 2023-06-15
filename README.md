@@ -30,6 +30,7 @@ Proyecto de prueba, conceptos de angular v16.
     - Event binding
     - *ngFor
     - *ngIf
+    - Pipes
 - Estructura de proyecto componentes, modelos y servicios
     - Clases Modelo
         - Empleado

@@ -67,8 +67,4 @@ export class ListaEmpleadosComponent {
       }
     });
   }
-
-  formatear(numero: string){
-    return new Intl.NumberFormat('es-CL').format(parseInt(numero));
-  }
 }

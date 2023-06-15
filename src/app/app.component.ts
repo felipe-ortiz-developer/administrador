@@ -11,6 +11,8 @@ import { LoginService } from './services/login.service';
 export class AppComponent implements OnInit {
   constructor(private loginService: LoginService){ }
 
+  fecha: Date = new Date();
+
   ngOnInit(): void {
     firebase.initializeApp({
       apiKey: "AIzaSyBOtU3tBDUvaGMw6RGVSZ23WI0gktb90Dc",

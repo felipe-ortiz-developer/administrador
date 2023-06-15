@@ -22,7 +22,7 @@
                     <td>{{ empleado.apellido }}</td>
                     <td><span [ngClass]="{desarrollador: empleado.cargo == 'Developer'}">{{ empleado.cargo }}</span>
                     </td>
-                    <td>${{ formatear(empleado.salario) }}</td>
+                    <td>{{ empleado.salario | currency:'CLP':'symbol-narrow' }}</td>
                     <td>
                         <div class="row">
                             <div class="col-auto">
