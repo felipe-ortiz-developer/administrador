@@ -19,6 +19,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { LoginService } from './services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginGuardian } from './components/login/login-guardian';
+import { RutModule } from 'rut-chileno';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { LoginGuardian } from './components/login/login-guardian';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RutModule
   ],
   providers: [
     EmpleadoService,

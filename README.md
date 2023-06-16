@@ -51,3 +51,4 @@ Proyecto de prueba, conceptos de angular v16.
     - ng-bootstrap
     - sweetalert2
     - cookies
+    - rut-chileno
