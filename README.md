@@ -1,10 +1,7 @@
 ## <img src="src/assets/hombre-de-negocios.png" width="30" alt="Texto alternativo"> Administrador
 Proyecto de prueba, conceptos de angular v16.
 
-- Usuario: fe.ortizo@alumnos.duoc.cl
-- Contraseña: porponeralgo
-
-![Alt text](image-1.png)
+![Alt text](image-2.png)
 ![Alt text](image.png)
 
 #### Funcionalidades
@@ -30,6 +27,8 @@ Proyecto de prueba, conceptos de angular v16.
     - Event binding
     - *ngFor
     - *ngIf
+    - Pipes
+    - Validación de formulario con ngForm
 - Estructura de proyecto componentes, modelos y servicios
     - Clases Modelo
         - Empleado

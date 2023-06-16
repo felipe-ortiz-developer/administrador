@@ -1,20 +1,37 @@
 <div class="container">
-    <div class="card">
-        <div class="card-body">
+    <div class="card form-signin">
+        <div class="card-body text-center">
             <form #f="ngForm" (ngSubmit)="login(f)">
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="usuario" ngModel placeholder="Usuario" class="form-control">
+                        <div class="form-floating">
+                            <input type="email" name="usuario" id="floatingUsuario" ngModel #usuario="ngModel" placeholder="Usuario" class="form-control" required email>
+                            <div [hidden]="usuario.valid || usuario.pristine"
+                                class="alert alert-danger">
+                                Ingrese un email valido
+                            </div>
+                            <label for="floatingUsuario">Email</label>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="password" name="contraseña" ngModel placeholder="Contraseña" class="form-control">
+                        <div class="form-floating">
+                            <input type="password" name="contrasena" id="floatingContrasena" ngModel #contrasena="ngModel" placeholder="Contraseña" class="form-control" required>
+                            <div [hidden]="contrasena.valid || contrasena.pristine"
+                                class="alert alert-danger">
+                                Ingrese su contraseña
+                            </div>
+                            <label for="floatingContrasena">Contraseña</label>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col">
-                        <input type="submit" value="Iniciar sessión" class="btn btn-primary">
+                        <button [disabled]="!f.valid" class="btn btn-primary">
+                            Iniciar sessión
+                        </button>
                     </div>
                 </div>
             </form>

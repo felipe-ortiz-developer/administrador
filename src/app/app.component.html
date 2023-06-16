@@ -43,6 +43,7 @@
           <a class="nav-link" role="button" *ngIf="estaLogeado() !== ''" (click)="logout()" routerLinkActive="active">Cerrar sesión</a>
         </li>
       </ul>
+      <p>{{fecha | date: 'EEEE dd/MM/yyyy HH:mm'}}</p> &nbsp;
     </div>
   </div>
 </nav>
