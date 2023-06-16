@@ -1,9 +1,6 @@
 ## <img src="src/assets/hombre-de-negocios.png" width="30" alt="Texto alternativo"> Administrador
 Proyecto de prueba, conceptos de angular v16.
 
-- Usuario: fe.ortizo@alumnos.duoc.cl
-- Contraseña: porponeralgo
-
 ![Alt text](image-1.png)
 ![Alt text](image.png)
 
