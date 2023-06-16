@@ -1,7 +1,7 @@
 ## <img src="src/assets/hombre-de-negocios.png" width="30" alt="Texto alternativo"> Administrador
 Proyecto de prueba, conceptos de angular v16.
 
-![Alt text](image-1.png)
+![Alt text](image-2.png)
 ![Alt text](image.png)
 
 #### Funcionalidades
@@ -28,6 +28,7 @@ Proyecto de prueba, conceptos de angular v16.
     - *ngFor
     - *ngIf
     - Pipes
+    - Validación de formulario con ngForm
 - Estructura de proyecto componentes, modelos y servicios
     - Clases Modelo
         - Empleado
