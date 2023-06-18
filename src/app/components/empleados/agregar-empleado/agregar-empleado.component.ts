@@ -18,7 +18,14 @@ export class AgregarEmpleadoComponent {
   txtSalario: string= "";
 
   crearEmpleado(){
-    let empleado = new Empleado(this.nEmpleados , this.txtNombre, this.txtApellido, this.txtCargo, this.txtSalario, []);
+    const empleado: Empleado = {
+      id: this.nEmpleados,
+      nombre: this.txtNombre,
+      apellido: this.txtApellido,
+      cargo: this.txtCargo,
+      salario: this.txtSalario,
+      caracteristicas: []
+    };
     this.eventoAgregarEmpleado.emit(empleado);
 
     this.txtNombre = "";
