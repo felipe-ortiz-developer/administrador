@@ -17,10 +17,13 @@ export class LoginComponent {
       const usuario = form.value.usuario;
       const contraseña = form.value.contrasena;
       // console.log(usuario, contraseña);
-      this.loginService.login(usuario, contraseña);
+      let respuesta = this.loginService.login(usuario, contraseña);
+      console.log("Respuesta");
+      console.log(respuesta);
+
     } else {
       console.log(form);
       // El formulario no es válido, maneja los errores aquí
-    } 
+    }
   }
 }
