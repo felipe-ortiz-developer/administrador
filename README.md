@@ -5,7 +5,9 @@ Proyecto de prueba, conceptos de angular v16.
 ![Alt text](image.png)
 
 #### Funcionalidades
-- Sistema de login
+- Sistema de autenticación
+  - Crea usuario
+  - Inicia sesión
 - Listar Empleados
 - Filtrar Empleados
 - Agregar Empleado
