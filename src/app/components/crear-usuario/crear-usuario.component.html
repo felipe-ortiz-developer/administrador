@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="card form-signin">
+      <div class="card-title text-center mt-3">
+        <h3>Crear usuario</h3>
+      </div>
+      <div class="card-body text-center">
+          <form #f="ngForm" (ngSubmit)="crearUsuario(f)" >
+              <div class="row">
+                  <div class="col">
+                      <div class="form-floating">
+                          <input type="email" name="usuario" id="floatingUsuario" ngModel #usuario="ngModel" placeholder="Usuario" class="form-control" required email>
+                          <div [hidden]="usuario.valid || usuario.pristine"
+                              class="alert alert-danger">
+                              Ingrese un email valido
+                          </div>
+                          <label for="floatingUsuario">Email</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <div class="form-floating">
+                          <input type="password" name="contrasena" id="floatingContrasena" ngModel #contrasena="ngModel" placeholder="Contraseña" class="form-control" required>
+                          <div [hidden]="contrasena.valid || contrasena.pristine"
+                              class="alert alert-danger">
+                              Ingrese su contraseña
+                          </div>
+                          <label for="floatingContrasena">Contraseña</label>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="row mt-4">
+                  <div class="col">
+                      <button [disabled]="!f.valid" class="btn btn-primary">
+                          Crear usuario
+                      </button>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a role="link" class="nav-link" routerLink="/login" routerLinkActive="active">
+                    Tengo una cuenta
+                  </a>
+                </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

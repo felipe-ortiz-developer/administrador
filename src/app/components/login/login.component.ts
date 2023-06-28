@@ -21,7 +21,6 @@ export class LoginComponent {
     } else {
       console.log(form);
       // El formulario no es válido, maneja los errores aquí
-    }
-    
+    } 
   }
 }
