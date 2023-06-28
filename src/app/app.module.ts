@@ -20,6 +20,7 @@ import { LoginService } from './services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginGuardian } from './components/login/login-guardian';
 import { RutModule } from 'rut-chileno';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { RutModule } from 'rut-chileno';
     AgregarEmpleadoComponent,
     CargosComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,
