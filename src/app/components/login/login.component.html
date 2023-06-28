@@ -1,5 +1,8 @@
 <div class="container">
     <div class="card form-signin">
+        <div class="card-title text-center mt-3">
+          <h3>Iniciar sesión</h3>
+        </div>
         <div class="card-body text-center">
             <form #f="ngForm" (ngSubmit)="login(f)">
                 <div class="row">
@@ -24,7 +27,6 @@
                             </div>
                             <label for="floatingContrasena">Contraseña</label>
                         </div>
-
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -36,7 +38,9 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <a class="nav-link" routerLink="/crear-usuario" routerLinkActive="active">Crear usuario</a>
+                    <a role="link" class="nav-link" routerLink="/crear-usuario" routerLinkActive="active">
+                      Crear usuario
+                    </a>
                   </div>
                 </div>
             </form>
