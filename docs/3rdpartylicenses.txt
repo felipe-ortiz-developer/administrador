@@ -488,6 +488,9 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 ngx-cookie-service
 MIT
 
+rut-chileno
+ISC
+
 rxjs
 Apache-2.0
                                Apache License
