@@ -6,9 +6,11 @@ import { CargosComponent } from './components/cargos/cargos.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginGuardian } from './components/login/login-guardian';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
+  {path: 'crear-usuario', component: CrearUsuarioComponent},
   {path: '', component: EmpleadosComponent, canActivate: [LoginGuardian]},
   {path: 'cargos', component: CargosComponent, canActivate: [LoginGuardian]},
   {path: '**', component: ErrorComponent},

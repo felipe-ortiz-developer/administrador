@@ -12,6 +12,20 @@ export class LoginService {
 
   token: string = '';
 
+  crearUsuario(usuario: string, contraseña: string){
+    return firebase.auth().createUserWithEmailAndPassword(usuario, contraseña)
+      .then((userCredential) => {
+        // Usuario creado exitosamente
+        const user = userCredential.user;
+        this.router.navigate(['/login'])
+        // Aquí puedes realizar cualquier otra acción que desees, como guardar información adicional en Firestore
+      })
+      .catch((error) => {
+        // Ocurrió un error al crear el usuario
+        console.error(error);
+      });
+  }
+
   login(usuario: string, contraseña: string){
     firebase.auth().signInWithEmailAndPassword(usuario, contraseña).then(
       response => {
